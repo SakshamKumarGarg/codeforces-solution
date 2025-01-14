@@ -12,6 +12,7 @@ int main(){
             cin>>arr[i][j];
         }
         cout<<endl;
+        
     }
     int count = 0;
     int k=0;
