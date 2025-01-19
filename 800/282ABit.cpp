@@ -1,19 +1,21 @@
-#include<iostream>
+#include <iostream>
+#include <string>
 using namespace std;
 
-int main(){
-    int n;
-    cin>>n;
-    int X = 0;
-    for(int i =0;i<n;i++){
-        if(n%2==0){
-            X++;
-        }
-        else{
-            --X;
+int main() {
+    int n, x = 0;
+    cin >> n;  
+    string statement;
+
+    for (int i = 0; i < n; i++) {
+        cin >> statement; 
+        if (statement.find("++") != string::npos) {
+            x++;  
+        } else {
+            x--;  
         }
     }
-    cout<<X;
-return 0;
 
+    cout << x << endl;  
+    return 0;
 }
