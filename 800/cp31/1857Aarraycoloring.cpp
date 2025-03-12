@@ -12,14 +12,25 @@ int main(){
         int n;
         cin >> n; 
 
-        vector<int> a(n); 
+        vector<int> ans(n); 
 
         for (int i = 0; i < n; i++)
         {
-            cin >> a[i]; 
+            cin >> ans[i]; 
         }
-        
+
+        int sum = 0;
+        for(int i=0;i<n;i++){
+            sum += ans[i];
+        }
+
+        if(sum%2 == 0){
+            cout<<"YES"<<'\n';
+        }
+        else{
+            cout<<"NO"<<'\n';
+        }
     }
 
-        return 0;
+    return 0;
 }
