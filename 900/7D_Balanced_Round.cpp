@@ -4,8 +4,7 @@ using namespace std;
 #define int long long 
 
 const int MOD = 1e9 + 7;
-const int INF = LLONG_MAX >> 1;
-
+const int INF = LLONG_MAX >> 1; 
 
 signed main(){
 
@@ -14,29 +13,30 @@ signed main(){
     int tc; cin>>tc;
 
     while(tc--){
-        int n;
-        cin>>n;
+        int n,k;
+        cin>>n>>k;
+
         vector<int> a(n);
         for(int i=0;i<n;i++){
             cin>>a[i];
         }
-
-        int total_xor = 0;
-        for(int i=0;i<n;i++){
-            total_xor ^= a[i];
-        }
-
-        if(n%2 == 1){
-            cout<<total_xor<<"\n";
-        }
-        else{
-            if(total_xor == 0){
-                cout<<total_xor<<"\n";
+        sort(a.begin(),a.end());
+        int count=1;
+        int ans=1;
+        for(int i=1;i<n;i++){
+            if(a[i]-a[i-1]<=k){
+                count++;
             }
             else{
-                cout<<-1<<"\n";
+                count=1;
             }
+        
+        ans = max(ans,count);
         }
+        
+        cout<<n-ans<<"\n";
+
+
     }
 
     return 0;
